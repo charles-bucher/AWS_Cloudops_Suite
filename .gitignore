@@ -69,3 +69,8 @@ config.txt
 
 # Scripts that might contain credentials
 fix_*.sh
+**/*.exe
+**/.terraform/*
+**/.terraform.lock.hcl
+*.exe
+.terraform/
