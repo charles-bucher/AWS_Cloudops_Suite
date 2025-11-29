@@ -1,0 +1,6 @@
+cloudOps-guardDuty-automation/
+└── diagrams/
+    ├── architecture/
+    │   └── guardduty_automation_arch.png
+    └── folder/
+        └── repo_structure.png

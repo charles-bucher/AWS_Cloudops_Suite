@@ -1,0 +1,1 @@
+# SNS alerts script

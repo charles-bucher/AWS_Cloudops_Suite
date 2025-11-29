@@ -1,0 +1,21 @@
+            +-----------------------+
+            |      AWS GuardDuty    |
+            | (Threat Detection)    |
+            +-----------+-----------+
+                        |
+                        v
+            +-----------------------+
+            |       S3 Bucket       |
+            | (Findings Storage)    |
+            +-----------+-----------+
+                        |
+            +-----------+-----------+
+            |                       |
+   +----------------+       +----------------+
+   | findings-monitor.py     | SES / Email   |
+   | (Python Script)         | Notifications |
+   +----------------+       +----------------+
+                        ^
+                        |
+                 Optional fallback
+                 to console/logs
