@@ -1,47 +1,110 @@
-# ⚡ AWS Monitoring & Observability Project
+# AWS Cloud Support Simulator 🚀
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/charles-bucher/aws_monitoring_observability/terraform-apply.yml?branch=main)
-![Terraform](https://img.shields.io/badge/Terraform-v1.5+-blue)
-![Python](https://img.shields.io/badge/Python-3.8+-yellow)
-![License](https://img.shields.io/badge/License-MIT-green)
-![AWS Free Tier](https://img.shields.io/badge/AWS-Free%20Tier-lightgrey)
+![Python](https://img.shields.io/badge/python-3.11-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 ---
 
-## 👋 About This Project
-**Proactively monitor AWS workloads with Terraform, CloudWatch, and GuardDuty.**  
+## Overview
 
-This hands-on lab demonstrates observability and monitoring pipelines for EC2, security, and operational metrics. It uses **Terraform**, **CloudWatch**, **SNS**, and **GuardDuty**, with CI/CD workflows to practice CloudOps skills in a learning environment.
+**AWS Cloud Support Simulator** is an interactive learning tool that simulates **real-world AWS support scenarios**.  
+Practice troubleshooting EC2, S3, IAM, Lambda, CloudWatch, and more, **safely and hands-on** — no production systems required.  
 
----
-
-## 🚀 Features
-- **EC2 Monitoring:** Track CPU, memory, and disk metrics with CloudWatch alarms  
-- **Centralized Logging:** Aggregate application logs and run queries with CloudWatch Logs Insights  
-- **Security Alerts:** GuardDuty findings sent to SNS notifications  
-- **Infrastructure as Code:** Deploy infrastructure reliably using Terraform  
-- **Automation:** CI/CD workflows using GitHub Actions  
+Perfect for self-learners, career pivoters, and anyone looking to build practical cloud support experience.
 
 ---
 
-## 🏗️ Architecture & Workflow
-![Architecture Diagram](screenshots/architecture-overview.png)  
+## Features 🌟
 
-**Workflow Overview:**  
-1. Terraform deploys EC2, CloudWatch metrics, SNS topics, and GuardDuty.  
-2. EC2 metrics and application logs are aggregated and monitored.  
-3. GuardDuty detects anomalies and triggers SNS notifications.  
-4. GitHub Actions validates Terraform and automates deployments.  
+- Simulated AWS services: EC2, S3, IAM, Lambda, CloudWatch, GuardDuty  
+- AI-assisted scenario guidance for troubleshooting  
+- Hands-on exercises for incident response  
+- Reusable Python scripts and notebooks  
+- Screenshots and visual walkthroughs for guidance  
 
 ---
 
-## 🛠️ Quick Start
+## Screenshots 📸
+
+<div align="center">
+
+| ![Confirm](screenshots/Confirm.png) | ![Dynamo Confirm](screenshots/Dynamo_Confirm.png) |
+|------------------------------------|---------------------------------------------|
+| Confirm Workflow                     | DynamoDB Confirmation                        |
+
+| ![IAM Roles](screenshots/IAM_Roles.png) | ![Python](screenshots/Python.png) |
+|----------------------------------------|----------------------------------|
+| IAM Roles & Policies                     | Python Script Execution          |
+
+| ![S3 Buckets](screenshots/S3_Buckets.png) | ![Terraform Installed](screenshots/Terraform_Installed.png) |
+|------------------------------------------|------------------------------------------------------------|
+| S3 Bucket Management                      | Terraform Setup Verification                                  |
+
+> Full screenshot gallery available in the `screenshots/` folder
+
+</div>
+
+---
+
+## Installation ⚡
+
+Clone the repo and set up a virtual environment:
+
 ```bash
-# Clone repository
-git clone https://github.com/charles-bucher/aws_monitoring_observability.git
-cd aws_monitoring_observability
+git clone https://github.com/charles-bucher/AWS_Cloud_Support_Sim.git
+cd AWS_Cloud_Support_Sim
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+Usage 🖥️
+Launch the simulator:
 
-# Deploy infrastructure
-terraform init
-terraform plan
-terraform apply
+bash
+Copy code
+python aws_support_sim.py
+Follow AI-assisted prompts to simulate incidents such as:
+
+Unauthorized IAM access
+
+EC2 instance failures
+
+S3 misconfigurations
+
+Lambda errors
+
+CloudWatch alerts
+
+Project Structure 📂
+bash
+Copy code
+AWS_Cloud_Support_Sim/
+│
+├─ screenshots/          # Visual walkthroughs and scenario references
+├─ scripts/              # Python automation scripts
+├─ notebooks/            # Jupyter notebooks for exercises
+├─ requirements.txt      # Python dependencies
+├─ README.md
+└─ aws_support_sim.py    # Main entry point
+Roadmap 🛠️
+Add RDS, VPC, Route53 simulations
+
+Hands-on challenges with scoring
+
+Multi-user collaboration
+
+Web interface for browser access
+
+License 📄
+MIT License
+
+Author 👨‍💻
+Charles Bucher – self-taught cloud support engineer.
+GitHub | Twitter
+
+“Hands-on practice beats theory 10x when learning cloud operations.”
+
+yaml
+Copy code
+
+---
+
