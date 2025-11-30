@@ -131,9 +131,7 @@ cloudops, aws, terraform, python-automation, ec2, s3, iam, lambda, cloudwatch, g
 📬 Contact
 Author: Charles Bucher – self-taught Cloud Support Engineer
 
-GitHub
 
-LinkedIn
 
 "Hands-on practice beats theory 10x when learning cloud operations."
 
