@@ -1,68 +1,88 @@
-# AWS Cloud Support Simulator 🚀
+# 🚀 AWS CloudOps Suite
 
-![Python](https://img.shields.io/badge/python-3.11-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-
----
-
-## Overview
-
-**AWS Cloud Support Simulator** is an interactive learning tool that simulates **real-world AWS support scenarios**.  
-Practice troubleshooting EC2, S3, IAM, Lambda, CloudWatch, and more, **safely and hands-on** — no production systems required.  
-
-Perfect for self-learners, career pivoters, and anyone looking to build practical cloud support experience.
+[![GitHub stars](https://img.shields.io/github/stars/charles-bucher/AWS_Cloudops_Suite?style=social)](https://github.com/charles-bucher/AWS_Cloudops_Suite/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/charles-bucher/AWS_Cloudops_Suite)](https://github.com/charles-bucher/AWS_Cloudops_Suite/issues)
+[![License](https://img.shields.io/github/license/charles-bucher/AWS_Cloudops_Suite)](LICENSE)
 
 ---
 
-## Features 🌟
+## 👋 Overview
+
+**AWS CloudOps Suite** is an interactive, hands-on learning repository that simulates real-world AWS cloud support and observability workflows.  
+
+- Practice **troubleshooting EC2, S3, IAM, Lambda, CloudWatch, GuardDuty**  
+- Automate tasks with **Python scripts, Terraform, and IaC templates**  
+- Gain experience in **incident response, monitoring, and proactive CloudOps**  
+- Perfect for **self-learners, career pivoters, and aspiring Cloud Support Engineers**  
+
+---
+
+## 🌟 Features
 
 - Simulated AWS services: EC2, S3, IAM, Lambda, CloudWatch, GuardDuty  
-- AI-assisted scenario guidance for troubleshooting  
-- Hands-on exercises for incident response  
-- Reusable Python scripts and notebooks  
-- Screenshots and visual walkthroughs for guidance  
+- AI-assisted guidance for troubleshooting scenarios  
+- Hands-on exercises for incident response and operational workflows  
+- Reusable Python scripts and Jupyter notebooks  
+- Full screenshot walkthroughs of scenarios  
 
 ---
 
-## Screenshots 📸
+## 📂 Project Structure
 
-<div align="center">
+AWS_Cloudops_Suite/
+│
+├─ diagrams/architecture/ # Architecture diagrams
+│ └─ AWS_Cloudops_suite_Diagram.png
+├─ screenshots/ # Visual walkthroughs
+├─ scripts/ # Python automation scripts
+├─ notebooks/ # Jupyter notebooks for exercises
+├─ requirements.txt # Python dependencies
+├─ README.md
+└─ aws_support_sim.py # Main simulator entry point
 
-| ![Confirm](screenshots/Confirm.png) | ![Dynamo Confirm](screenshots/Dynamo_Confirm.png) |
-|------------------------------------|---------------------------------------------|
-| Confirm Workflow                     | DynamoDB Confirmation                        |
-
-| ![IAM Roles](screenshots/IAM_Roles.png) | ![Python](screenshots/Python.png) |
-|----------------------------------------|----------------------------------|
-| IAM Roles & Policies                     | Python Script Execution          |
-
-| ![S3 Buckets](screenshots/S3_Buckets.png) | ![Terraform Installed](screenshots/Terraform_Installed.png) |
-|------------------------------------------|------------------------------------------------------------|
-| S3 Bucket Management                      | Terraform Setup Verification                                  |
-
-> Full screenshot gallery available in the `screenshots/` folder
-
-</div>
+yaml
+Copy code
 
 ---
 
-## Installation ⚡
+## 🖼 Architecture Diagram
 
-Clone the repo and set up a virtual environment:
+![AWS CloudOps Suite Diagram](diagrams/architecture/AWS_Cloudops_suite_Diagram.png)
+
+---
+
+## 📸 Screenshots
+
+### EC2 Troubleshooting
+![EC2 Connectivity Ping](screenshots/ACSS_01_ec2_connectivity_ping.png)
+![EC2 Instance Details](screenshots/ACSS_02_ec2_instance_details.png)
+![EC2 Ping Test](screenshots/ACSS_03_ec2_ping_test.png)
+![EC2 Security Group](screenshots/ACSS_04_ec2_security_group.png)
+![EC2 Security Group Verify](screenshots/ACSS_05_ec2_security_group_verify.png)
+![EC2 Stack Created](screenshots/ACSS_06_ec2_stack_created.png)
+
+### Python Automation
+![Python Git Commit](screenshots/ACSS_07_python_git_commit.png)
+![Python Requirements](screenshots/ACSS_08_python_requirements.png)
+![Python Run Main](screenshots/ACSS_09_python_run_main.png)
+
+*Full screenshot gallery is available in the `screenshots/` folder.*
+
+---
+
+## ⚡ Installation
 
 ```bash
-git clone https://github.com/charles-bucher/AWS_Cloud_Support_Sim.git
-cd AWS_Cloud_Support_Sim
+git clone https://github.com/charles-bucher/AWS_Cloudops_Suite.git
+cd AWS_Cloudops_Suite
 python -m venv venv
 .\venv\Scripts\activate
 pip install -r requirements.txt
-Usage 🖥️
-Launch the simulator:
-
+🖥 Usage
 bash
 Copy code
 python aws_support_sim.py
-Follow AI-assisted prompts to simulate incidents such as:
+Follow AI-assisted prompts to simulate scenarios such as:
 
 Unauthorized IAM access
 
@@ -74,34 +94,26 @@ Lambda errors
 
 CloudWatch alerts
 
-Project Structure 📂
-bash
-Copy code
-AWS_Cloud_Support_Sim/
-│
-├─ screenshots/          # Visual walkthroughs and scenario references
-├─ scripts/              # Python automation scripts
-├─ notebooks/            # Jupyter notebooks for exercises
-├─ requirements.txt      # Python dependencies
-├─ README.md
-└─ aws_support_sim.py    # Main entry point
-Roadmap 🛠️
+🛠 Roadmap
 Add RDS, VPC, Route53 simulations
 
-Hands-on challenges with scoring
+Hands-on scoring challenges
 
 Multi-user collaboration
 
 Web interface for browser access
 
-License 📄
-MIT License
+🔑 Keywords
+cloudops, aws, terraform, python-automation, ec2, s3, iam, lambda, cloudwatch, guardduty, observability, security-automation, incident-response
 
-Author 👨‍💻
-Charles Bucher – self-taught cloud support engineer.
-GitHub | Twitter
+📬 Contact
+Author: Charles Bucher – self-taught Cloud Support Engineer
 
-“Hands-on practice beats theory 10x when learning cloud operations.”
+GitHub
+
+LinkedIn
+
+"Hands-on practice beats theory 10x when learning cloud operations."
 
 yaml
 Copy code
