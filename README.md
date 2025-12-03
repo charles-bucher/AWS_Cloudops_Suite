@@ -1,7 +1,13 @@
 🚀 AWS CloudOps Suite
 
 
+## Architecture
 
+
+## Architecture
+```mermaid
+[Copy the AWS CloudOps Suite diagram from artifact 1]
+```
 
 
 
