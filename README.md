@@ -187,32 +187,56 @@ graph TD
 ### Project Learning Phases
 
 ```mermaid
-timeline
-    title CloudOps Learning Journey
-    section Phase 1: Setup
-        AWS CLI Configuration : IAM access keys
-        Boto3 Installation : Python SDK setup
-        Terraform Install : v1.13.2
-    section Phase 2: State Management
-        S3 Backend : Remote state storage
-        DynamoDB : State locking table
-        Backend Config : Secure credentials
-    section Phase 3: IAM & Security
-        IAM Roles : Lambda execution roles
-        Policies : Least privilege access
-        User Permissions : Access management
-    section Phase 4: Monitoring
-        CloudWatch Metrics : CPU, memory, disk
-        Custom Alarms : Threshold alerts
-        Dashboards : Visual monitoring
-    section Phase 5: Automation
-        Lambda Functions : Serverless automation
-        Python Scripts : GuardDuty monitoring
-        S3 Storage : Findings repository
-    section Phase 6: Infrastructure
-        Terraform Deploy : Multi-resource provisioning
-        Outputs : Resource references
-        State Management : Version control
+graph LR
+    subgraph "Phase 1: Setup"
+        A1[AWS CLI Config]
+        A2[Boto3 Install]
+        A3[Terraform v1.13.2]
+    end
+    
+    subgraph "Phase 2: State Management"
+        B1[S3 Backend]
+        B2[DynamoDB Lock]
+        B3[Secure Credentials]
+    end
+    
+    subgraph "Phase 3: IAM & Security"
+        C1[IAM Roles]
+        C2[Policies]
+        C3[User Permissions]
+    end
+    
+    subgraph "Phase 4: Monitoring"
+        D1[CloudWatch Metrics]
+        D2[Custom Alarms]
+        D3[Dashboards]
+    end
+    
+    subgraph "Phase 5: Automation"
+        E1[Lambda Functions]
+        E2[Python Scripts]
+        E3[S3 Storage]
+    end
+    
+    subgraph "Phase 6: Infrastructure"
+        F1[Terraform Deploy]
+        F2[Outputs]
+        F3[State Management]
+    end
+    
+    A1 --> A2 --> A3
+    A3 --> B1 --> B2 --> B3
+    B3 --> C1 --> C2 --> C3
+    C3 --> D1 --> D2 --> D3
+    D3 --> E1 --> E2 --> E3
+    E3 --> F1 --> F2 --> F3
+    
+    style A1 fill:#4dabf7
+    style B1 fill:#4dabf7
+    style C1 fill:#ff6b6b
+    style D1 fill:#ffd43b
+    style E1 fill:#51cf66
+    style F1 fill:#7B42BC
 ```
 
 ---
@@ -271,23 +295,23 @@ flowchart TD
 <summary>📋 AWS Configuration & Authentication</summary>
 
 **AWS Access Key Configuration:**
-![CloudOps Access Key](screenshots/CloudOps_01_cloudopsaccess_key.png)
+![CloudOps Access Key](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_01_cloudopsaccess_key.png)
 *Configured AWS CLI with access keys for programmatic access*
 
 **Backend State Configuration:**
-![Backend Config](screenshots/CloudOps_02_backend_config.png)
+![Backend Config](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_02_backend_config.png)
 *Set up Terraform backend for remote state management in S3*
 
 **Boto3 SDK Installation:**
-![Boto3 Install](screenshots/CloudOps_03_boto3_install.png)
+![Boto3 Install](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_03_boto3_install.png)
 *Installed AWS SDK for Python (Boto3) for automation scripts*
 
 **CLI Configuration Verification:**
-![CLI Config](screenshots/CloudOps_04_cli_conf.png)
+![CLI Config](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_04_cli_conf.png)
 *Verified AWS CLI configuration and credentials*
 
 **CloudWatch Initial Setup:**
-![CloudWatch Setup](screenshots/CloudOps_05_cloudwatch.png)
+![CloudWatch Setup](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_05_cloudwatch.png)
 *Configured CloudWatch for metrics collection and monitoring*
 
 </details>
@@ -300,11 +324,11 @@ flowchart TD
 <summary>📋 Terraform State & DynamoDB</summary>
 
 **State Lock Confirmation:**
-![Confirmation](screenshots/CloudOps_06_confirm.png)
+![Confirmation](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_06_confirm.png)
 *Verified Terraform state locking mechanism*
 
 **DynamoDB State Lock Table:**
-![DynamoDB Confirm](screenshots/CloudOps_07_dynamo_confirm.png)
+![DynamoDB Confirm](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_07_dynamo_confirm.png)
 *Created DynamoDB table for Terraform state locking to prevent concurrent modifications*
 
 </details>
@@ -317,11 +341,11 @@ flowchart TD
 <summary>📋 IAM Roles & Permissions</summary>
 
 **IAM Roles Created:**
-![IAM Roles](screenshots/CloudOps_08_iam_roles.png)
+![IAM Roles](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_08_iam_roles.png)
 *Configured IAM roles for Lambda functions and EC2 instances*
 
 **User Permission Policies:**
-![User Permissions](screenshots/CloudOps_09_user_permissions.png)
+![User Permissions](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_09_user_permissions.png)
 *Applied least-privilege IAM policies for secure access control*
 
 </details>
@@ -334,7 +358,7 @@ flowchart TD
 <summary>📋 Lambda Deployment</summary>
 
 **Lambda Functions Deployed:**
-![Lambda Functions](screenshots/CloudOps_10_lambda_functions.png)
+![Lambda Functions](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_10_lambda_functions.png)
 *Created Lambda functions for automated monitoring and alerting tasks*
 
 </details>
@@ -347,15 +371,15 @@ flowchart TD
 <summary>📋 CloudWatch Metrics Dashboard</summary>
 
 **Metrics Overview:**
-![Metrics Overview](screenshots/CloudOps_11_metrics.png)
+![Metrics Overview](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_11_metrics.png)
 *CloudWatch dashboard showing key infrastructure metrics*
 
 **CPU Utilization Metrics:**
-![Metrics Detail 2](screenshots/CloudOps_12_metrics_2.png)
+![Metrics Detail 2](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_12_metrics_2.png)
 *Detailed CPU utilization tracking for EC2 instances*
 
 **Custom Metric Configuration:**
-![Metrics Detail 3](screenshots/CloudOps_13_metrics_3.png)
+![Metrics Detail 3](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_13_metrics_3.png)
 *Custom CloudWatch metrics for application-specific monitoring*
 
 </details>
@@ -368,15 +392,15 @@ flowchart TD
 <summary>📋 Python Scripts & S3 Management</summary>
 
 **Python Automation Script:**
-![Python Execution](screenshots/CloudOps_14_python.png)
+![Python Execution](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_14_python.png)
 *Python script execution for GuardDuty findings monitoring*
 
 **S3 Buckets Overview:**
-![S3 Buckets](screenshots/CloudOps_15_s3_buckets.png)
+![S3 Buckets](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_15_s3_buckets.png)
 *S3 buckets created for Terraform state and GuardDuty findings storage*
 
 **S3 Bucket Creation Confirmation:**
-![S3 Created](screenshots/CloudOps_16_s3_created.png)
+![S3 Created](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_16_s3_created.png)
 *Successful creation of findings storage bucket*
 
 </details>
@@ -389,19 +413,19 @@ flowchart TD
 <summary>📋 Terraform Deployment Process</summary>
 
 **Terraform Deployment Confirmation:**
-![Terraform Confirm](screenshots/CloudOps_17_terraform_confirm.png)
+![Terraform Confirm](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_17_terraform_confirm.png)
 *Terraform plan confirmation before applying infrastructure changes*
 
 **Terraform Execution:**
-![Terraform Setup](screenshots/CloudOps_18_terraform.png)
+![Terraform Setup](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_18_terraform.png)
 *Running Terraform apply to provision AWS resources*
 
 **Terraform Installation Verified:**
-![Terraform Installed](screenshots/CloudOps_19_terraform_installed.png)
+![Terraform Installed](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_19_terraform_installed.png)
 *Terraform v1.13.2 successfully installed and configured*
 
 **Terraform Installation Process:**
-![Terraform Install](screenshots/CloudOps_20_terraform_install.png)
+![Terraform Install](https://raw.githubusercontent.com/charles-bucher/AWS_Cloudops_Suite/main/screenshots/CloudOps_20_terraform_install.png)
 *Step-by-step Terraform installation on Windows*
 
 </details>
