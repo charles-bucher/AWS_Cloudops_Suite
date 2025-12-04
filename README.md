@@ -1,145 +1,75 @@
-🚀 AWS CloudOps Suite
+# Charles Bucher 👋  
 
+**Cloud & IT Support | AWS | Windows & Linux | Hands-On Labs & Troubleshooting**  
+📍 Pinellas Park, Florida  ✉️ quietopscb@gmail.com  
+🔗 [Portfolio](https://charles-bucher.github.io) | [LinkedIn](https://www.linkedin.com/in/charles-bucher-cloud) | [GitHub](https://github.com/charles-bucher)  
 
-## Architecture
+---
 
+## About Me
+I’m a Cloud and IT Support practitioner specializing in AWS, Windows, and Linux environments, focused on hands-on labs, troubleshooting, and automation.  
 
-## Architecture
-```mermaid
-[Copy the AWS CloudOps Suite diagram from artifact 1]
-```
+**Core Skills:**  
+- AWS: EC2, S3, VPC, CloudWatch, CloudFormation, Lambda, GuardDuty  
+- Infrastructure as Code: Terraform, CloudFormation  
+- Scripting & Automation: Python, Bash, PowerShell  
+- Observability & Monitoring: CloudWatch, automated alerts  
+- Multi-tier troubleshooting and incident response  
 
+---
 
+## Featured Projects & Screenshots
 
-👋 Overview
+<details>
+<summary>🔧 AWS_Cloudops_Suite (Click to expand)</summary>
 
-AWS CloudOps Suite is a hands-on Cloud Support simulation, designed to mirror real-world AWS troubleshooting, monitoring, and automation workflows. This repository demonstrates incident response, proactive monitoring, and CloudOps best practices.
+**Workflow Highlights:** Monitoring → Incident Simulation → Auto-Remediation  
 
-Troubleshoot EC2, S3, IAM, Lambda, CloudWatch, and GuardDuty scenarios end-to-end.
+| ![CloudOps_01](screenshots/CloudOps_01_cloudopsaccess_key.png) | ![CloudOps_02](screenshots/CloudOps_02_backend_config.png) | ![CloudOps_05](screenshots/CloudOps_05_cloudwatch.png) |
+|---|---|---|
+| ![CloudOps_07](screenshots/CloudOps_07_dynamo_confirm.png) | ![CloudOps_10](screenshots/CloudOps_10_lambda_functions.png) | ![CloudOps_15](screenshots/CloudOps_15_s3_buckets.png) |
+| ![CloudOps_17](screenshots/CloudOps_17_terraform_confirm.png) | | |
 
-Automate tasks using Python scripts, Terraform, and Infrastructure-as-Code templates.
+</details>
 
-Gain experience in incident response, monitoring, security, and automation.
+<details>
+<summary>🔧 Multi-Tier-App-Troubleshooting-Playground (Click to expand)</summary>
 
-Perfect for self-learners, career pivoters, and aspiring Cloud Support Engineers.
+**Workflow Highlights:** Broken App → Root Cause → Fix Applied  
 
-🌟 Features & Measurable Impact
+| ![Multi_01](screenshots/Multi_01_UserLogin.png) | ![Multi_02](screenshots/Multi_02_MainDashboard.png) | ![Multi_03](screenshots/Multi_03_ErrorLogsView.png) |
+|---|---|---|
+| ![Multi_04](screenshots/Multi_04_APIResponse.png) | ![Multi_05](screenshots/Multi_05_AdminLogin.png) | |
 
-AWS services simulated: EC2, S3, IAM, Lambda, CloudWatch, GuardDuty.
+</details>
 
-Scenario-based learning: Each workflow mimics real support tickets.
+<details>
+<summary>🔧 AWS_Cloud_Support_Sim (Click to expand)</summary>
 
-Automation & Python scripting: Reduce manual errors in repetitive tasks.
+**Workflow Highlights:** Ticket Workflow → CloudWatch Logs → Resolution  
 
-End-to-end verification: Screenshots and workflow diagrams illustrate full resolution.
+| ![CloudSupport_01](screenshots/CloudSupport_01_EC2-Network-Connectivity-Tester.png) | ![CloudSupport_01b](screenshots/CloudSupport_01_NetworkConnectivity.png) | ![CloudSupport_02](screenshots/CloudSupport_02_EC2-Security-Group-Manager.png) |
+|---|---|---|
+| ![CloudSupport_03](screenshots/CloudSupport_03_CloudFormation-Troubleshooting-Stack-.png) | ![CloudSupport_04](screenshots/CloudSupport_04_AWS-Cloud-Support-Portfolio.png) | ![CloudSupport_05](screenshots/CloudSupport_05_Python-AWS-Project-Template.png) |
 
-Reusable IaC templates: Deploy Terraform stacks and verify outputs.
+</details>
 
-🖼 Architecture Diagram
+---
 
+## Philosophy
+Learning by doing. Every project is hands-on, reproducible, and documented to reflect real-world cloud and IT support challenges. Focus on **problem-solving, automation, and clear documentation** makes work recruiter-friendly.  
 
-Visual overview of monitoring, automation, Terraform deployment, and GuardDuty alerts.
+---
 
-📸 Screenshots – Workflow Steps
+## Connect
+- Email: quietopscb@gmail.com  
+- LinkedIn: [in/charles-bucher-cloud](https://www.linkedin.com/in/charles-bucher-cloud)  
+- Portfolio: [charles-bucher.github.io](https://charles-bucher.github.io)  
 
-1️⃣ AWS CLI & Setup
+---
 
-CloudOps Access Key – CloudOps_01_cloudopsaccess_key.png
+**Repository Purpose:**  
+This README.md showcases my public profile, skills, projects, and learning journey.  
 
-Backend Configuration – CloudOps_02_backend_config.png
-
-Boto3 Installation – CloudOps_03_boto3_install.png
-
-CLI Configuration – CloudOps_04_cli_conf.png
-
-CloudWatch Setup – CloudOps_05_cloudwatch.png
-
-2️⃣ Confirmation & DynamoDB
-
-Confirmation Check – CloudOps_06_confirm.png
-
-DynamoDB Verification – CloudOps_07_dynamo_confirm.png
-
-3️⃣ IAM & Permissions
-
-IAM Roles – CloudOps_08_iam_roles.png
-
-IAM User Permissions – CloudOps_09_user_permissions.png
-
-4️⃣ Lambda Functions
-
-Lambda Functions Deployment – CloudOps_10_lambda_functions.png
-
-5️⃣ CloudWatch Metrics
-
-Metrics Overview – CloudOps_11_metrics.png
-
-Metrics Details 2 – CloudOps_12_metrics_2.png
-
-Metrics Details 3 – CloudOps_13_metrics_3.png
-
-6️⃣ Python & S3
-
-Python Execution – CloudOps_14_python.png
-
-S3 Buckets Overview – CloudOps_15_s3_buckets.png
-
-S3 Bucket Created – CloudOps_16_s3_created.png
-
-7️⃣ Terraform Deployment & Verification
-
-Terraform Confirm – CloudOps_17_terraform_confirm.png
-
-Terraform Setup – CloudOps_18_terraform.png
-
-Terraform Installed – CloudOps_19_terraform_installed.png
-
-Terraform Installation Step – CloudOps_20_terraform_install.png
-
-All screenshots provide clear visual proof of each workflow step, making this repo highly scannable and recruiter-friendly.
-
-⚡ Installation
-git clone https://github.com/charles-bucher/AWS_Cloudops_Suite.git
-cd AWS_Cloudops_Suite
-python -m venv venv
-.\venv\Scripts\activate
-pip install -r requirements.txt
-
-🖥 Usage
-python aws_support_sim.py
-
-
-Follow the prompts to simulate scenarios:
-
-Unauthorized IAM access
-
-EC2 instance failures
-
-S3 misconfigurations
-
-Lambda function errors
-
-CloudWatch alerts
-
-Terraform deployments
-
-Example impact: Automated Terraform deployments reduced manual configuration errors by 100% in simulated labs.
-
-🛠 Roadmap
-
-Add RDS, VPC, and Route53 simulations
-
-Hands-on scoring challenges
-
-Multi-user collaboration labs
-
-Web interface for browser-based CloudOps exercises
-
-🔑 Keywords
-
-cloudops, aws, terraform, python-automation, ec2, s3, iam, lambda, cloudwatch, guardduty, observability, security-automation, incident-response
-
-📬 Contact
-
-Charles Bucher – Self-taught Cloud Support Engineer
-
+**Topics:**  
+`aws` `cloudformation` `ec2` `s3` `vpc` `cloudops` `learning-journey` `it-support` `hands-on-labs` `skills-portfolio`
