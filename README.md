@@ -103,32 +103,44 @@ python scripts/health-check.py
 📸 Implementation Evidence
 ## 📸 Implementation Evidence
 
-**Screenshots of CloudOps Suite Deployment and Testing:**
+## 📸 Implementation Evidence
 
-| Step | Screenshot |
-|------|------------|
-| 01. AWS Access & CLI Config | ![CloudOps_01](screenshots/CloudOps_01_cloudopsaccess_key.png) |
-| 02. Backend Config | ![CloudOps_02](screenshots/CloudOps_02_backend_config.png) |
-| 03. Python & Boto3 Installation | ![CloudOps_03](screenshots/CloudOps_03_boto3_install.png) |
-| 04. AWS CLI Configuration | ![CloudOps_04](screenshots/CloudOps_04_cli_conf.png) |
-| 05. CloudWatch Dashboard | ![CloudOps_05](screenshots/CloudOps_05_cloudwatch.png) |
-| 06. Terraform Apply Confirmation | ![CloudOps_06](screenshots/CloudOps_06_confirm.png) |
-| 07. DynamoDB State Check | ![CloudOps_07](screenshots/CloudOps_07_dynamo_confirm.png) |
-| 08. IAM Roles Created | ![CloudOps_08](screenshots/CloudOps_08_iam_roles.png) |
-| 09. IAM User Permissions | ![CloudOps_09](screenshots/CloudOps_09_user_permissions.png) |
-| 10. Lambda Functions Deployed | ![CloudOps_10](screenshots/CloudOps_10_lambda_functions.png) |
-| 11. CloudWatch Metrics | ![CloudOps_11](screenshots/CloudOps_11_metrics.png) |
-| 12. CloudWatch Metrics - 2 | ![CloudOps_12](screenshots/CloudOps_12_metrics_2.png) |
-| 13. CloudWatch Metrics - 3 | ![CloudOps_13](screenshots/CloudOps_13_metrics_3.png) |
-| 14. Python Monitoring Script | ![CloudOps_14](screenshots/CloudOps_14_python.png) |
-| 15. S3 Buckets Setup | ![CloudOps_15](screenshots/CloudOps_15_s3_buckets.png) |
-| 16. S3 Bucket Creation Confirmed | ![CloudOps_16](screenshots/CloudOps_16_s3_created.png) |
-| 17. Terraform Confirmation | ![CloudOps_17](screenshots/CloudOps_17_terraform_confirm.png) |
-| 18. Terraform Plan & Output | ![CloudOps_18](screenshots/CloudOps_18_terraform.png) |
-| 19. Terraform Installed | ![CloudOps_19](screenshots/CloudOps_19_terraform_installed.png) |
-| 20. Terraform Installation | ![CloudOps_20](screenshots/CloudOps_20_terraform_install.png) |
-| 21. Full Suite Terraform Plan | ![CloudOps_00](screenshots/cloudops_00_suite_plan.png) |
+Below are key screenshots showing the AWS CloudOps suite in action:
 
+### Phase 0: Full Terraform Plan
+![Terraform Plan Output](screenshots/cloudops_00_suite_plan.png)
+
+### Phase 1: AWS Access & CLI Setup
+![CloudOps Access Key](screenshots/CloudOps_01_cloudopsaccess_key.png)
+![Backend Configuration](screenshots/CloudOps_02_backend_config.png)
+![Boto3 Installation](screenshots/CloudOps_03_boto3_install.png)
+![CLI Configuration](screenshots/CloudOps_04_cli_conf.png)
+
+### Phase 2: CloudWatch Monitoring
+![CloudWatch Metrics](screenshots/CloudOps_05_cloudwatch.png)
+![CloudWatch Confirmation](screenshots/CloudOps_06_confirm.png)
+
+### Phase 3: DynamoDB & IAM
+![DynamoDB Confirmation](screenshots/CloudOps_07_dynamo_confirm.png)
+![IAM Roles](screenshots/CloudOps_08_iam_roles.png)
+![User Permissions](screenshots/CloudOps_09_user_permissions.png)
+
+### Phase 4: Lambda & Metrics
+![Lambda Functions](screenshots/CloudOps_10_lambda_functions.png)
+![Metrics Overview](screenshots/CloudOps_11_metrics.png)
+![Metrics Overview 2](screenshots/CloudOps_12_metrics_2.png)
+![Metrics Overview 3](screenshots/CloudOps_13_metrics_3.png)
+
+### Phase 5: Python Automation & S3
+![Python Scripts](screenshots/CloudOps_14_python.png)
+![S3 Buckets](screenshots/CloudOps_15_s3_buckets.png)
+![S3 Created](screenshots/CloudOps_16_s3_created.png)
+
+### Phase 6: Terraform Deployment
+![Terraform Confirm](screenshots/CloudOps_17_terraform_confirm.png)
+![Terraform Apply](screenshots/CloudOps_18_terraform.png)
+![Terraform Installed](screenshots/CloudOps_19_terraform_installed.png)
+![Terraform Installation](screenshots/CloudOps_20_terraform_install.png)
 AWS Access & CLI Config	
 Backend Config	
 Python & Boto3 Setup	
