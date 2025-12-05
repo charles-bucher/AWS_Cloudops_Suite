@@ -100,10 +100,14 @@ python scripts/findings-monitor.py
 
 # Run infrastructure health check
 python scripts/health-check.py
+
+
+## Implementation Evidence
+
 ## Implementation Evidence
 
 ### Terraform Plan Output
-![Terraform Plan](screenshots/cloudops_00_suite_plan.png)
+![Terraform Plan Output](screenshots/cloudops_00_suite_plan.png)
 
 ### AWS Configuration & Access
 ![CloudOps Access Key](screenshots/CloudOps_01_cloudopsaccess_key.png)
@@ -136,6 +140,7 @@ python scripts/health-check.py
 ![Terraform](screenshots/CloudOps_18_terraform.png)
 ![Terraform Installed](screenshots/CloudOps_19_terraform_installed.png)
 ![Terraform Install](screenshots/CloudOps_20_terraform_install.png)
+
 
 📚 Skills Demonstrated
 Area	Technologies / Tools
