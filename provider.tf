@@ -1,29 +1,13 @@
-# ==============================================
-# Terraform and Provider Configuration
-# ==============================================
-
 terraform {
-  required_version = ">= 1.0"
-  
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.0"
+      version = ">= 5.0.0"
     }
   }
+  required_version = ">= 1.5.0"
 }
 
 provider "aws" {
-  region = var.aws_region
-  
-  # Default tags applied to all resources
-  default_tags {
-    tags = {
-      ManagedBy   = "Terraform"
-      Project     = "aws-observability"
-      Repository  = "github.com/charles-bucher/aws_monitoring_observability"
-      Owner       = "charles-bucher"
-      CostCenter  = "Learning"
-    }
-  }
+  region = var.region
 }
