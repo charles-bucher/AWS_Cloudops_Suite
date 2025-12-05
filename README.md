@@ -100,55 +100,42 @@ python scripts/findings-monitor.py
 
 # Run infrastructure health check
 python scripts/health-check.py
-📸 Implementation Evidence
-## 📸 Implementation Evidence
+## Implementation Evidence
 
-## 📸 Implementation Evidence
+### Terraform Plan Output
+![Terraform Plan](screenshots/cloudops_00_suite_plan.png)
 
-Below are key screenshots showing the AWS CloudOps suite in action:
-
-### Phase 0: Full Terraform Plan
-![Terraform Plan Output](screenshots/cloudops_00_suite_plan.png)
-
-### Phase 1: AWS Access & CLI Setup
+### AWS Configuration & Access
 ![CloudOps Access Key](screenshots/CloudOps_01_cloudopsaccess_key.png)
-![Backend Configuration](screenshots/CloudOps_02_backend_config.png)
-![Boto3 Installation](screenshots/CloudOps_03_boto3_install.png)
-![CLI Configuration](screenshots/CloudOps_04_cli_conf.png)
+![Backend Config](screenshots/CloudOps_02_backend_config.png)
+![Boto3 Install](screenshots/CloudOps_03_boto3_install.png)
+![CLI Config](screenshots/CloudOps_04_cli_conf.png)
 
-### Phase 2: CloudWatch Monitoring
-![CloudWatch Metrics](screenshots/CloudOps_05_cloudwatch.png)
-![CloudWatch Confirmation](screenshots/CloudOps_06_confirm.png)
+### CloudWatch & Monitoring
+![CloudWatch](screenshots/CloudOps_05_cloudwatch.png)
+![Confirm Setup](screenshots/CloudOps_06_confirm.png)
 
-### Phase 3: DynamoDB & IAM
-![DynamoDB Confirmation](screenshots/CloudOps_07_dynamo_confirm.png)
+### DynamoDB & IAM
+![Dynamo Confirm](screenshots/CloudOps_07_dynamo_confirm.png)
 ![IAM Roles](screenshots/CloudOps_08_iam_roles.png)
 ![User Permissions](screenshots/CloudOps_09_user_permissions.png)
 
-### Phase 4: Lambda & Metrics
+### Lambda & Metrics
 ![Lambda Functions](screenshots/CloudOps_10_lambda_functions.png)
-![Metrics Overview](screenshots/CloudOps_11_metrics.png)
-![Metrics Overview 2](screenshots/CloudOps_12_metrics_2.png)
-![Metrics Overview 3](screenshots/CloudOps_13_metrics_3.png)
+![Metrics 1](screenshots/CloudOps_11_metrics.png)
+![Metrics 2](screenshots/CloudOps_12_metrics_2.png)
+![Metrics 3](screenshots/CloudOps_13_metrics_3.png)
 
-### Phase 5: Python Automation & S3
+### Python Scripts & S3
 ![Python Scripts](screenshots/CloudOps_14_python.png)
 ![S3 Buckets](screenshots/CloudOps_15_s3_buckets.png)
 ![S3 Created](screenshots/CloudOps_16_s3_created.png)
 
-### Phase 6: Terraform Deployment
+### Terraform Deployment
 ![Terraform Confirm](screenshots/CloudOps_17_terraform_confirm.png)
-![Terraform Apply](screenshots/CloudOps_18_terraform.png)
+![Terraform](screenshots/CloudOps_18_terraform.png)
 ![Terraform Installed](screenshots/CloudOps_19_terraform_installed.png)
-![Terraform Installation](screenshots/CloudOps_20_terraform_install.png)
-AWS Access & CLI Config	
-Backend Config	
-Python & Boto3 Setup	
-Terraform Apply	
-CloudWatch Metrics	
-S3 Buckets	
-
-You can expand this table to include all 20 screenshots in order.
+![Terraform Install](screenshots/CloudOps_20_terraform_install.png)
 
 📚 Skills Demonstrated
 Area	Technologies / Tools
