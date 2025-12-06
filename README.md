@@ -1,142 +1,154 @@
-AWS CloudOps Suite
-GitHub Repo Size
-GitHub Last Commit
-GitHub Language
-License: MIT
-Hands‑on AWS monitoring, alerting, and automation project built for learning CloudOps practices and demonstrating practical skills in CloudWatch monitoring, Terraform infrastructure, Python automation, and GuardDuty security.
+# AWS CloudOps Suite | Entry-Level CloudOps Project
 
-📋 About
-This project sets up a full‑stack AWS CloudOps environment, including:
-- GuardDuty for security monitoring
-- CloudWatch for metrics and alerts
-- S3 Buckets for findings storage
-- SNS for notifications
-- Terraform for infrastructure as code
-Designed for entry‑level Cloud Support / CloudOps roles to showcase practical skills.
+[![AWS](https://img.shields.io/badge/AWS-CloudOps-orange)](https://aws.amazon.com/)
+[![Terraform](https://img.shields.io/badge/Terraform-IaC-blue)](https://www.terraform.io/)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-🏗️ System Architecture
-CloudOps Pipeline Overview:
-- Terraform Deployment – Infrastructure setup (GuardDuty, CloudWatch alarms, SNS topics, S3 buckets)
-- Security Monitoring – GuardDuty detects threats and findings
-- Alerts & Automation – CloudWatch alarms trigger SNS notifications
-- Evidence Storage – Findings stored in S3 for auditing
+**Hands-on AWS project to demonstrate practical CloudOps skills for learning and entry-level roles.**  
 
-🚀 Quick Start
-Prerequisites
-- AWS Free Tier account
-- Terraform 1.0+
-- Python 3.8+
-- AWS CLI configured
-Installation
-# Clone repository
+---
+
+## 📋 About
+This project demonstrates a **hands-on AWS CloudOps environment**, designed for entry-level Cloud Support or Junior DevOps roles.  
+
+**Key features:**
+
+- AWS GuardDuty for security monitoring  
+- AWS CloudWatch for metrics, monitoring, and alerts  
+- AWS SNS for automated notifications  
+- AWS S3 for storing monitoring findings  
+- Terraform for Infrastructure as Code  
+- Python scripts for automation using Boto3  
+
+**Purpose:** Learn, implement, and troubleshoot cloud infrastructure, and showcase practical skills in a real project.
+
+---
+
+## 🏗️ CloudOps Workflow
+
+1. **Terraform Deployment** – Provision AWS resources (GuardDuty, CloudWatch, SNS, S3)  
+2. **Security Monitoring** – GuardDuty detects threats and findings  
+3. **Alerts & Automation** – CloudWatch alarms trigger SNS notifications  
+4. **Evidence Storage** – Findings stored in S3  
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- AWS Free Tier account  
+- Terraform 1.0+  
+- Python 3.8+  
+- AWS CLI configured  
+
+### Installation
+```bash
 git clone https://github.com/charles-bucher/AWS_Cloudops_Suite.git
 cd AWS_Cloudops_Suite
 
-# Create Python virtual environment
 python -m venv venv
 
-# Activate virtual environment
-# Windows:
+# Windows
 .\venv\Scripts\activate
-# Linux/Mac:
+# Linux/Mac
 source venv/bin/activate
 
-# Install Python dependencies
 pip install -r requirements.txt
 
-# Configure AWS credentials
 aws configure
-
-
 Deploy Infrastructure
-# Initialize Terraform
+bash
+Copy code
 terraform init
-
-# Review planned changes
 terraform plan
-
-# Apply infrastructure
 terraform apply
+📸 Screenshots & Evidence
+User Interface
+User Login:
+
+Main Dashboard:
+
+Error Logs View:
+
+API Response Example:
+
+Admin Screens
+Admin Login:
+
+Admin Dashboard & Error Logs:
 
 
+Admin API Response:
 
-📸 Implementation Evidence
-Terraform Plan Output
-|  | 
-|  | 
-
+Secondary & Tertiary Users
+Secondary User Login & Dashboard:
 
 
-AWS Configuration & Access
-|  |  |  |  | 
-|  |  |  |  | 
+Secondary User Error Logs & API Response:
 
 
-
-CloudWatch & Monitoring
-|  |  | 
-|  |  | 
+Tertiary User Login & Dashboard:
 
 
-
-DynamoDB & IAM
-|  |  |  | 
-|  |  |  | 
+Tertiary User Error Logs & API Response:
 
 
+Test Login Screen:
 
-Lambda & Metrics
-|  |  |  |  | 
-|  |  |  |  | 
+Python Automation Example
+python
+Copy code
+import boto3
 
+sns = boto3.client('sns')
+sns.publish(
+    TopicArn='arn:aws:sns:region:account-id:topic',
+    Message='Test Alert from CloudOps Suite'
+)
+📚 Skills Learned & Demonstrated
+AWS CloudWatch monitoring and alarms
 
+AWS SNS notifications and alerts
 
-Python Scripts & S3
-|  |  |  | 
-|  |  |  | 
+AWS GuardDuty security monitoring
 
+Python automation with Boto3
 
+Terraform Infrastructure as Code
 
-Terraform Deployment
-|  |  |  |  | 
-|  |  |  |  | 
+S3, Lambda, DynamoDB, IAM
 
-
-
-📚 Skills Demonstrated
-|  |  | 
-|  |  | 
-|  |  | 
-|  |  | 
-|  |  | 
-|  |  | 
-|  |  | 
-|  |  | 
-
-
+Observability, alerting, and incident response
 
 🎯 Next Steps
-- Add RDS monitoring scenarios
-- Implement VPC flow log analysis
-- Build CI/CD pipeline with GitHub Actions
-- Add unit tests and cost monitoring
+Add RDS monitoring scenarios
 
-💼 Career Relevance
-Skills highlighted in this project are applicable to:
-- Cloud Support Engineer
-- Junior DevOps / CloudOps Roles
-- Infrastructure as Code / AWS Automation
+Analyze VPC flow logs
+
+Build CI/CD pipeline using GitHub Actions
+
+Implement cost monitoring and unit tests
+
+💼 Entry-Level Career Relevance
+Demonstrates skills for:
+
+Cloud Support Engineer / Technician
+
+Junior CloudOps / DevOps roles
+
+AWS Infrastructure Automation & Troubleshooting
+
+Security Monitoring & Incident Response
 
 📝 License
-This project is licensed under the MIT License. See the LICENSE file for details.
+MIT License – see LICENSE
 
 📧 Contact
-Charles Bucher
-📍 Pinellas Park, Florida
+Charles Bucher | Pinellas Park, FL
 ✉️ quietopscb@gmail.com
 🔗 GitHub • LinkedIn
 
 🔑 Keywords for ATS
-AWS, CloudOps, Terraform, Python, CloudWatch, GuardDuty, Lambda, S3, DynamoDB, IAM, Infrastructure as Code, Boto3, Monitoring, Alerting, Security Automation, DevOps, Cloud Support, Incident Response, Observability
-
+AWS, CloudOps, Cloud Support, Junior DevOps, Terraform, Python, CloudWatch, GuardDuty, Lambda, S3, DynamoDB, IAM, Boto3, Monitoring, Alerting, Automation, Infrastructure as Code, Observability
 
