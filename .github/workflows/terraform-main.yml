@@ -1,0 +1,39 @@
+name: Terraform Main
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'terraform/**'
+
+jobs:
+  terraform-apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.7.5
+
+      - name: Terraform Init
+        run: terraform -chdir=terraform init
+
+      - name: Terraform Plan
+        run: terraform -chdir=terraform plan -out=tfplan -no-color
+
+      - name: Approval Step
+        uses: hmarr/auto-approve-action@v2
+        if: github.actor == 'dependabot[bot]' # Optional: skip manual approval for bots
+
+      - name: Terraform Apply
+        run: terraform -chdir=terraform apply -auto-approve tfplan
+
+      - name: Terraform Destroy (Full Reproducibility Check)
+        run: terraform -chdir=terraform destroy -auto-approve
+
+      - name: Terraform Re-Apply
+        run: terraform -chdir=terraform apply -auto-approve
