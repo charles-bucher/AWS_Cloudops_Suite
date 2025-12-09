@@ -63,9 +63,6 @@ This is a complete monitoring stack for AWS infrastructure:
 
 ## Deployment Screenshots
 
-<details>
-<summary><b>Click to view all deployment screenshots (21 images)</b></summary>
-
 ### Complete Suite Plan
 ![Full Suite Plan](screenshots/cloudops_00_suite_plan.png)
 
@@ -98,8 +95,6 @@ This is a complete monitoring stack for AWS infrastructure:
 ![Terraform](screenshots/CloudOps_18_terraform.png)
 ![Terraform Installed](screenshots/CloudOps_19_terraform_installed.png)
 ![Terraform Install Process](screenshots/CloudOps_20_terraform_install.png)
-
-</details>
 
 ---
 
@@ -301,7 +296,7 @@ The 21 screenshots show the real deployment process - setup, configuration, depl
 Cloud Support Engineer (in training)  
 📍 Pinellas Park, FL  
 ✉️ quietopscb@gmail.com  
-🔗 [GitHub](https://github.com/charles-bucher) | [LinkedIn](https://linkedin.com/in/charles-bucher)
+🔗 [GitHub](https://github.com/charles-bucher) | [LinkedIn](https://linkedin.com/in/charles-bucher-cloud)
 
 I'm self-teaching cloud engineering and building production infrastructure projects to demonstrate capabilities for Cloud Support or Junior DevOps roles. Currently working full-time as a delivery driver while learning AWS, Terraform, and Python.
 
@@ -317,7 +312,7 @@ MIT License - see [LICENSE](LICENSE) file
 
 ---
 
-**Last Updated:** December 2025
+**Last Updated:** December 2025  
 **Project Status:** Active development - 35+ commits showing real iteration and problem-solving
 
 This infrastructure was deployed and tested multiple times. All screenshots represent actual AWS resources I configured and validated.
