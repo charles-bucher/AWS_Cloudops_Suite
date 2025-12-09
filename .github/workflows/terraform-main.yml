@@ -1,39 +1,42 @@
-name: Terraform Main
+name: Terraform Deploy to Main
 
 on:
   push:
     branches:
       - main
-    paths:
-      - 'terraform/**'
+
+permissions:
+  contents: read
+  id-token: write
 
 jobs:
-  terraform-apply:
+  terraform-deploy:
     runs-on: ubuntu-latest
+    name: Terraform Init / Validate / Plan / Apply
+
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v2
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.7.5
+          terraform_version: 1.6.6
 
       - name: Terraform Init
-        run: terraform -chdir=terraform init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
 
       - name: Terraform Plan
-        run: terraform -chdir=terraform plan -out=tfplan -no-color
+        run: terraform plan -no-color -input=false | tee terraform-plan-main.txt
 
-      - name: Approval Step
-        uses: hmarr/auto-approve-action@v2
-        if: github.actor == 'dependabot[bot]' # Optional: skip manual approval for bots
+      - name: Upload Terraform Plan Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: terraform-plan-main
+          path: terraform-plan-main.txt
 
       - name: Terraform Apply
-        run: terraform -chdir=terraform apply -auto-approve tfplan
-
-      - name: Terraform Destroy (Full Reproducibility Check)
-        run: terraform -chdir=terraform destroy -auto-approve
-
-      - name: Terraform Re-Apply
-        run: terraform -chdir=terraform apply -auto-approve
+        run: terraform apply -auto-approve

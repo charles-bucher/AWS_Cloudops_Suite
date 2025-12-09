@@ -1,0 +1,36 @@
+name: Trivy Security Scan
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  trivy-scan:
+    runs-on: ubuntu-latest
+    name: Trivy Repository Scan
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Trivy
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y wget
+          wget https://github.com/aquasecurity/trivy/releases/download/v0.49.1/trivy_0.49.1_Linux-64bit.deb
+          sudo dpkg -i trivy_0.49.1_Linux-64bit.deb
+
+      - name: Run Trivy FS Scan
+        run: |
+          trivy fs --no-progress --exit-code 0 --format table --output trivy-scan.txt .
+
+      - name: Upload Trivy Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-scan-results
+          path: trivy-scan.txt
