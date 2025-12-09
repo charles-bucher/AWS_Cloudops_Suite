@@ -6,7 +6,7 @@
 ![CloudWatch](https://img.shields.io/badge/CloudWatch-%23FF4F8B.svg?style=for-the-badge&logo=Amazon%20CloudWatch&logoColor=white)
 ![License](https://img.shields.io/github/license/charles-bucher/AWS_Cloudops_Suite?style=for-the-badge)
 
-Production-ready AWS monitoring infrastructure using GuardDuty, CloudWatch, SNS, Lambda, and Terraform. Built to learn cloud security and observability without spending hundreds on third-party monitoring tools.
+Production-ready AWS monitoring infrastructure using GuardDuty, CloudWatch, SNS, Lambda, and Terraform. Built to learn cloud troubleshooting and AWS service integration.
 
 ---
 
@@ -298,9 +298,9 @@ Cloud Support Engineer (in training)
 ✉️ quietopscb@gmail.com  
 🔗 [GitHub](https://github.com/charles-bucher) | [LinkedIn](https://linkedin.com/in/charles-bucher-cloud)
 
-I'm self-teaching cloud engineering and building production infrastructure projects to demonstrate capabilities for Cloud Support or Junior DevOps roles. Currently working full-time as a delivery driver while learning AWS, Terraform, and Python.
+I'm self-teaching cloud engineering and building hands-on projects to learn AWS troubleshooting for Cloud Support roles. Currently working full-time as a delivery driver while learning AWS, Terraform, and Python.
 
-**Looking for:** Remote Cloud Support Engineer, Junior DevOps, or CloudOps positions where I can prove what I can do through hands-on work.
+**Looking for:** Remote Cloud Support Engineer or Technical Support Engineer roles where I can apply hands-on AWS troubleshooting skills and continue learning.
 
 ---
 
@@ -312,7 +312,7 @@ MIT License - see [LICENSE](LICENSE) file
 
 ---
 
-**Last Updated:** December 2025
+**Last Updated:** December 2025 
 **Project Status:** Active development - 35+ commits showing real iteration and problem-solving
 
 This infrastructure was deployed and tested multiple times. All screenshots represent actual AWS resources I configured and validated.
