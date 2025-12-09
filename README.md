@@ -66,36 +66,38 @@ This is a complete monitoring stack for AWS infrastructure:
 <details>
 <summary><b>Click to view all deployment screenshots (21 images)</b></summary>
 
+### Complete Suite Plan
+![Full Suite Plan](screenshots/cloudops_00_suite_plan.png)
+
 ### Initial Setup
-![CloudOps Setup](screenshots/cloudops-setup.png)
-![AWS Access Key](screenshots/access-key.png)
-![Backend Config](screenshots/backend-config.png)
-
-### Environment Configuration  
-![Boto3 Install](screenshots/boto3-install.png)
-![CLI Config](screenshots/cli-config.png)
-![Python Setup](screenshots/python-setup.png)
-
-### Terraform Deployment
-![Terraform Installed](screenshots/terraform-installed.png)
-![Terraform Install Process](screenshots/terraform-install.png)
-![Terraform Confirm](screenshots/terraform-confirm.png)
-![Full Suite Plan](screenshots/terraform-plan-full.png)
+![AWS Access Key](screenshots/CloudOps_01_cloudopsaccess_key.png)
+![Backend Config](screenshots/CloudOps_02_backend_config.png)
+![Boto3 Install](screenshots/CloudOps_03_boto3_install.png)
+![CLI Config](screenshots/CloudOps_04_cli_conf.png)
 
 ### AWS Services Deployed
-![CloudWatch](screenshots/cloudwatch.png)
-![DynamoDB Confirm](screenshots/dynamo-confirm.png)
-![IAM Roles](screenshots/iam-roles.png)
-![User Permissions](screenshots/user-permissions.png)
-![Lambda Functions](screenshots/lambda-functions.png)
-![S3 Buckets](screenshots/s3-buckets.png)
-![S3 Created](screenshots/s3-created.png)
+![CloudWatch](screenshots/CloudOps_05_cloudwatch.png)
+![Confirm Setup](screenshots/CloudOps_06_confirm.png)
+![DynamoDB Confirm](screenshots/CloudOps_07_dynamo_confirm.png)
+![IAM Roles](screenshots/CloudOps_08_iam_roles.png)
+![User Permissions](screenshots/CloudOps_09_user_permissions.png)
+![Lambda Functions](screenshots/CloudOps_10_lambda_functions.png)
 
 ### Monitoring & Metrics
-![Metrics 1](screenshots/metrics.png)
-![Metrics 2](screenshots/metrics-2.png)
-![Metrics 3](screenshots/metrics-3.png)
-![Confirm Setup](screenshots/confirm-setup.png)
+![Metrics 1](screenshots/CloudOps_11_metrics.png)
+![Metrics 2](screenshots/CloudOps_12_metrics_2.png)
+![Metrics 3](screenshots/CloudOps_13_metrics_3.png)
+
+### Environment Configuration  
+![Python Setup](screenshots/CloudOps_14_python.png)
+![S3 Buckets](screenshots/CloudOps_15_s3_buckets.png)
+![S3 Created](screenshots/CloudOps_16_s3_created.png)
+
+### Terraform Deployment
+![Terraform Confirm](screenshots/CloudOps_17_terraform_confirm.png)
+![Terraform](screenshots/CloudOps_18_terraform.png)
+![Terraform Installed](screenshots/CloudOps_19_terraform_installed.png)
+![Terraform Install Process](screenshots/CloudOps_20_terraform_install.png)
 
 </details>
 
@@ -315,7 +317,7 @@ MIT License - see [LICENSE](LICENSE) file
 
 ---
 
-**Last Updated:** December 2024  
+**Last Updated:** December 2025
 **Project Status:** Active development - 35+ commits showing real iteration and problem-solving
 
 This infrastructure was deployed and tested multiple times. All screenshots represent actual AWS resources I configured and validated.
