@@ -1,10 +1,15 @@
 # AWS_Cloudops_Suite – Cloud Support & AWS Monitoring Lab
 
+
+
 ## TL;DR
 
 **AWS_Cloudops_Suite** is a full-stack AWS monitoring and automation lab built with Terraform, CloudWatch, GuardDuty, SNS, Lambda, S3, and IAM.  
 
 **Purpose:** Hands-on learning of cloud troubleshooting, incident response, and infrastructure-as-code.  
+
+![AWS Cloud Support Diagram](./Diagrams/AWS_Cloud_Support_Diagram.png)
+
 
 **Key Features:**
 - GuardDuty detects security threats.
