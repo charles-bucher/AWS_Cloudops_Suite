@@ -5,7 +5,7 @@
 
 **Purpose:** Hands-on learning of cloud troubleshooting, incident response, and infrastructure-as-code.
 
-![AWS Cloud Support Diagram](diagrams/architecture/aws-cloud-support-diagram.png)
+![AWS Cloud Support Diagram](diagrams/AWS_Cloudops_suite_Diagram.png)
 
 **Key Features:**
 - GuardDuty detects security threats.
