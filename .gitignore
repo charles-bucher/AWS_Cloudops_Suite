@@ -74,3 +74,5 @@ fix_*.sh
 **/.terraform.lock.hcl
 *.exe
 .terraform/
+__pycache__/
+
