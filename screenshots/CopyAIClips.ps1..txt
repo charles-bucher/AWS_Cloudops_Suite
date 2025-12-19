@@ -1,0 +1,43 @@
+# Source folders to scan
+$sourceFolders = @(
+    "C:\Users\buche\Downloads",
+    "C:\Users\buche\OneDrive\Desktop\programs\Pictures\FELON2CLOUD"
+)
+
+# USB destination
+$usbDrive = "D:\AI_Clips"
+
+# Create destination folder if it doesn't exist
+if (-not (Test-Path -Path $usbDrive)) {
+    New-Item -ItemType Directory -Path $usbDrive
+}
+
+# File types to search for
+$fileTypes = "*.mp4","*.mov","*.avi","*.mkv","*.wav","*.mp3"
+
+# Scan each source folder
+foreach ($folder in $sourceFolders) {
+    foreach ($type in $fileTypes) {
+        $files = Get-ChildItem -Path $folder -Recurse -Filter $type
+        foreach ($file in $files) {
+            # Optional: only copy files with "AI" in the name
+            if ($file.Name -match "AI") {
+                $destination = Join-Path $usbDrive $file.Name
+
+                # If a file with the same name exists, add a number to avoid overwriting
+                $counter = 1
+                while (Test-Path $destination) {
+                    $baseName = [System.IO.Path]::GetFileNameWithoutExtension($file.Name)
+                    $extension = $file.Extension
+                    $destination = Join-Path $usbDrive ("$baseName`_copy$counter$extension")
+                    $counter++
+                }
+
+                Copy-Item -Path $file.FullName -Destination $destination -Force
+                Write-Host "Copied: $($file.FullName) -> $destination"
+            }
+        }
+    }
+}
+
+Write-Host "All AI clips have been copied to $usbDrive"

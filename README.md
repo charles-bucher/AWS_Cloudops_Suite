@@ -7,6 +7,23 @@
 
 ![AWS Cloud Support Diagram](diagrams/AWS_Cloudops_suite_Diagram.png)
 
+## Real-World Troubleshooting Examples
+
+### Scenario 1: EC2 Instance Won't Connect
+- Problem: Customer can't SSH to EC2
+- Investigation: Check security groups, NACLs, key pairs
+- Solution: [link to runbook/script]
+
+### Scenario 2: S3 Bucket Access Denied
+- Problem: IAM permission errors
+- Investigation: Policy analysis
+- Solution: [link to fix]
+
+### Scenario 3: High CloudWatch Costs
+- Problem: Unexpected charges
+- Investigation: Metric analysis
+- Solution: Optimization recommendations
+
 **Key Features:**
 - GuardDuty detects security threats.
 - CloudWatch monitors metrics, dashboards, and alarms.
