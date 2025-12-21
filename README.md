@@ -5,19 +5,19 @@
 
 **Purpose:** Hands-on learning of cloud troubleshooting, incident response, and infrastructure-as-code.
 
-![AWS Cloud Support Diagram](diagrams/AWS_Cloudops_suite_Diagram.png)
+![AWS_Cloudops_suite_Diagram.png](diagrams/AWS_Cloudops_suite_Diagram.png)
 
 ## Real-World Troubleshooting Examples
 
 ### Scenario 1: EC2 Instance Won't Connect
-- Problem: Customer can't SSH to EC2
+- Problem: Customer can cloud support cloud support portfolio portfolio portfolio engineer engineer engineer incident incident't SS  cloud support  portfolio portfolio portfolio  engineer engineer engineer  incident incidentH to EC2
 - Investigation: Check security groups, NACLs, key pairs
-- Solution: [link to runbook/script]
+- Solution: scripts/runbook_example.py
 
 ### Scenario 2: S3 Bucket Access Denied
 - Problem: IAM permission errors
 - Investigation: Policy analysis
-- Solution: [link to fix]
+- Solution: scripts/remediation_example.py
 
 ### Scenario 3: High CloudWatch Costs
 - Problem: Unexpected charges
@@ -69,7 +69,8 @@ All screenshots and commits represent real deployments and problem-solving.
 ---
 
 ## 🛠️ Project Overview
-**Goal:** Provide small teams with 24/7 AWS monitoring using native services (~$20/month) instead of expensive SaaS tools ($500+/month).
+**``~$20/month``  
+``$500+/month``
 
 | Service | What It Does | Rough Lab Impact / Notes |
 |---------|-------------|--------------------------|
@@ -84,10 +85,10 @@ All screenshots and commits represent real deployments and problem-solving.
 ---
 
 ## 📸 Deployment Screenshots
-[View All Screenshots](screenshots/)
+
 
 ## Architecture Diagrams
-[View Architecture Diagrams](diagrams/architecture/)
+
 
 ---
 
@@ -128,7 +129,7 @@ terraform apply  # type 'yes'
 ---
 
 ## 📄 License
-MIT License - See [LICENSE](LICENSE) file for details
+MIT License - See LICENSE file for details
 
 ---
 
@@ -143,7 +144,9 @@ MIT License - See [LICENSE](LICENSE) file for details
 ![08_iam_roles.png](screenshots/08_iam_roles.png)
 ![09_user_permissions.png](screenshots/09_user_permissions.png)
 ![10_collector_run.png](screenshots/10_collector_run.png)
-![10_lambda_functions.png](screenshots/10_lambda_functions.png)
+![11_lambda_functions.png](screenshots/11_lambda_functions.png)
+
+)
 ![11_metrics_1.png](screenshots/11_metrics_1.png)
 ![12_metrics_2.png](screenshots/12_metrics_2.png)
 ![13_metrics_3.png](screenshots/13_metrics_3.png)
@@ -162,3 +165,13 @@ MIT License - See [LICENSE](LICENSE) file for details
 ![26_suite_plan.png](screenshots/26_suite_plan.png)
 ![27_random_password_plan.png](screenshots/27_random_password_plan.png)
 ![ec2_cpu_report.png](screenshots/ec2_cpu_report.png)
+
+
+## Projects
+
+- Placeholder content
+
+
+## Contact
+
+- Placeholder content
