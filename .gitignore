@@ -76,3 +76,9 @@ fix_*.sh
 .terraform/
 __pycache__/
 
+
+# Additional patterns
+*.pyc
+.env
+venv/
+.aws/

@@ -175,3 +175,11 @@ MIT License - See LICENSE file for details
 ## Contact
 
 - Placeholder content
+
+
+## 👤 Author
+**Charles Bucher**
+- Portfolio: [charles-bucher.github.io](https://charles-bucher.github.io/)
+- LinkedIn: [charles-bucher-cloud](https://linkedin.com/in/charles-bucher-cloud)
+- GitHub: [@charles-bucher](https://github.com/charles-bucher)
+- Email: quietopscb@gmail.com
