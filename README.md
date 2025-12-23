@@ -1,25 +1,25 @@
-# AWS_Cloudops_Suite – Cloud Support & AWS Monitoring Lab
+### AWS_Cloudops_Suite – Cloud Support & AWS Monitoring Lab
 
-## TL;DR
+#### TL;DR
 **AWS_Cloudops_Suite** is a full-stack AWS monitoring and automation lab built with Terraform, CloudWatch, GuardDuty, SNS, Lambda, S3, and IAM.
 
 **Purpose:** Hands-on learning of cloud troubleshooting, incident response, and infrastructure-as-code.
 
 ![AWS_Cloudops_suite_Diagram.png](diagrams/AWS_Cloudops_suite_Diagram.png)
 
-## Real-World Troubleshooting Examples
+#### Real-World Troubleshooting Examples
 
-### Scenario 1: EC2 Instance Won't Connect
+##### Scenario 1: EC2 Instance Won't Connect
 - Problem: Customer can cloud support cloud support portfolio portfolio portfolio engineer engineer engineer incident incident't SS  cloud support  portfolio portfolio portfolio  engineer engineer engineer  incident incidentH to EC2
 - Investigation: Check security groups, NACLs, key pairs
 - Solution: scripts/runbook_example.py
 
-### Scenario 2: S3 Bucket Access Denied
+##### Scenario 2: S3 Bucket Access Denied
 - Problem: IAM permission errors
 - Investigation: Policy analysis
 - Solution: scripts/remediation_example.py
 
-### Scenario 3: High CloudWatch Costs
+##### Scenario 3: High CloudWatch Costs
 - Problem: Unexpected charges
 - Investigation: Metric analysis
 - Solution: Optimization recommendations
@@ -47,10 +47,10 @@
 
 ---
 
-## 📍 Location
+#### 📍 Location
 Pinellas Park, FL
 
-## 👤 About This Repo
+#### 👤 About This Repo
 **AWS_Cloudops_Suite** is a hands-on, production-grade monitoring and security lab built to learn Cloud Support and AWS service integration.  
 It's fully Terraform-managed, with GuardDuty, CloudWatch, SNS, Lambda, S3, IAM, and DynamoDB.  
 All screenshots and commits represent real deployments and problem-solving.
@@ -59,7 +59,7 @@ All screenshots and commits represent real deployments and problem-solving.
 
 ---
 
-## 🚀 Core Skills Practiced
+#### 🚀 Core Skills Practiced
 - **AWS Services:** EC2, S3, VPC, RDS, Lambda, CloudFormation, CloudWatch, GuardDuty, SNS, IAM, DynamoDB
 - **Automation & IaC:** Terraform, Python/Boto3, Bash, PowerShell
 - **Monitoring:** CloudWatch dashboards, alarms, SNS notifications, log analysis
@@ -68,7 +68,7 @@ All screenshots and commits represent real deployments and problem-solving.
 
 ---
 
-## 🛠️ Project Overview
+#### 🛠️ Project Overview
 **``~$20/month``  
 ``$500+/month``
 
@@ -84,24 +84,24 @@ All screenshots and commits represent real deployments and problem-solving.
 
 ---
 
-## 📸 Deployment Screenshots
+#### 📸 Deployment Screenshots
 
 
-## Architecture Diagrams
+#### Architecture Diagrams
 
 
 ---
 
-## ⚙️ How to Deploy
+#### ⚙️ How to Deploy
 
-### Prerequisites
+##### Prerequisites
 - AWS account with admin access
 - Terraform 1.0+
 - Python 3.8+
 - AWS CLI configured
 - Git
 
-### Installation
+##### Installation
 
 ```bash
 git clone https://github.com/charles-bucher/AWS_Cloudops_Suite.git
@@ -110,8 +110,8 @@ cd AWS_Cloudops_Suite
 aws configure  # Access Key, Secret, Region, Output
 
 python -m venv venv
-# Windows: .\venv\Scripts\activate
-# Linux/macOS: source venv/bin/activate
+### Windows: .\venv\Scripts\activate
+### Linux/macOS: source venv/bin/activate
 pip install -r requirements.txt
 
 terraform init
@@ -121,14 +121,14 @@ terraform apply  # type 'yes'
 
 ---
 
-## About
+#### About
 "AWS CloudOps Full-Stack | Terraform, CloudWatch, GuardDuty, Lambda & Automated Incident Response Labs"
 
 **Topics:** python aws security devops monitoring serverless terraform incident-response cloudwatch infrastructure-monitoring infrastructure-as-code cloudops cloud-support guardduty cloud-automation hands-on-labs
 
 ---
 
-## 📄 License
+#### 📄 License
 MIT License - See LICENSE file for details
 
 ---
@@ -167,17 +167,17 @@ MIT License - See LICENSE file for details
 ![ec2_cpu_report.png](screenshots/ec2_cpu_report.png)
 
 
-## Projects
+#### Projects
 
 - Placeholder content
 
 
-## Contact
+#### Contact
 
 - Placeholder content
 
 
-## 👤 Author
+#### 👤 Author
 **Charles Bucher**
 - Portfolio: [charles-bucher.github.io](https://charles-bucher.github.io/)
 - LinkedIn: [charles-bucher-cloud](https://linkedin.com/in/charles-bucher-cloud)
