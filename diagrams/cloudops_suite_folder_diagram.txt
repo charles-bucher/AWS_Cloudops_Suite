@@ -1,0 +1,20 @@
+AWS_Cloudops_Suite/
+├── .github/
+│   └── workflows/          # CI/CD pipelines (Terraform, Trivy scans)
+├── diagrams/               # Architecture & workflow diagrams
+├── docs/                   # Documentation, README expansions
+├── lambdas/                # Lambda function code (Python)
+├── screenshots/            # Deployment evidence (28+ screenshots)
+├── scripts/                # Automation & remediation scripts (Python/Bash/PowerShell)
+├── src/                    # Source code (supporting modules or utilities)
+├── terraform/              # Terraform modules (GuardDuty, CloudWatch, SNS, Lambda, S3, IAM)
+├── tests/                  # Unit & integration tests
+├── main.tf                 # Main Terraform deployment
+├── variables.tf            # Terraform variables definitions
+├── outputs.tf              # Terraform output definitions
+├── provider.tf             # AWS provider configuration
+├── Backend.tf              # Terraform remote state configuration
+├── index.py                # Lambda entrypoint / orchestrator
+├── requirements.txt        # Python dependencies
+├── validate_repos.py       # Validation & testing script
+└── README.md               # Project overview and instructions
