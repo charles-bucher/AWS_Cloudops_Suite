@@ -23,13 +23,13 @@ LAST_RUN_FILE = ".last_run"
 
 # Setup logging
 logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s"
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
 # AWS clients
 s3 = boto3.client("s3", region_name=REGION)
 ses = boto3.client("ses", region_name=REGION)
+
 
 # ===== Functions =====
 def get_last_run_time():
@@ -38,13 +38,15 @@ def get_last_run_time():
             return float(f.read().strip())
     return 0
 
+
 def save_last_run_time(timestamp):
     with open(LAST_RUN_FILE, "w") as f:
         f.write(str(timestamp))
 
+
 def list_new_findings():
     last_run = get_last_run_time()
-    paginator = s3.get_paginator('list_objects_v2')
+    paginator = s3.get_paginator("list_objects_v2")
     page_iterator = paginator.paginate(Bucket=BUCKET_NAME, Prefix=PREFIX)
 
     new_files = []
@@ -55,19 +57,18 @@ def list_new_findings():
 
     return new_files
 
+
 def read_s3_object(key):
     response = s3.get_object(Bucket=BUCKET_NAME, Key=key)
     return response["Body"].read().decode("utf-8")
+
 
 def send_alert(subject, body):
     try:
         ses.send_email(
             Source=ALERT_EMAIL,
             Destination={"ToAddresses": [ALERT_EMAIL]},
-            Message={
-                "Subject": {"Data": subject},
-                "Body": {"Text": {"Data": body}}
-            }
+            Message={"Subject": {"Data": subject}, "Body": {"Text": {"Data": body}}},
         )
         logging.info(f"Alert sent: {subject}")
     except ClientError as e:
@@ -76,6 +77,7 @@ def send_alert(subject, body):
         print(subject)
         print(body)
         print("----------------------------")
+
 
 def process_findings():
     logging.info("Starting GuardDuty findings monitor...")
@@ -95,6 +97,7 @@ def process_findings():
             send_alert(subject, body)
         except Exception as e:
             logging.error(f"Error processing {key}: {e}")
+
 
 # ===== Main =====
 if __name__ == "__main__":

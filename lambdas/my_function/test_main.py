@@ -1,5 +1,6 @@
 from main import handler
- # relative import
+
+# relative import
 
 # Simulate a Lambda event
 event = {"test": "data"}
