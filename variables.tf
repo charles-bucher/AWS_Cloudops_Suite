@@ -1,1 +1,1 @@
-variable 'example' { default = 'value' }
+terraform { required_version = ">= 1.0.0" }
