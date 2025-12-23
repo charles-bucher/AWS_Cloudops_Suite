@@ -4,39 +4,152 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:  # Allows manual triggering
 
 permissions:
   contents: read
   id-token: write
+  pull-requests: write  # For commenting on PRs if needed
+
+env:
+  TF_VERSION: 1.6.6
+  TF_LOG: INFO  # Set to DEBUG for troubleshooting
 
 jobs:
   terraform-deploy:
     runs-on: ubuntu-latest
-    name: Terraform Init / Validate / Plan / Apply
+    name: Terraform Deploy
+    
+    # Add environment protection (configure in repo settings)
+    environment:
+      name: production
+      # url: ${{ steps.apply.outputs.environment_url }}  # Optional: link to deployed resources
+
+    defaults:
+      run:
+        working-directory: ./  # Adjust if terraform files are in a subdirectory
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.6.6
+          terraform_version: ${{ env.TF_VERSION }}
+          terraform_wrapper: true  # Enables outputs capture
+
+      # Optional: Configure cloud provider credentials
+      # Uncomment and configure based on your cloud provider
+      
+      # For AWS:
+      # - name: Configure AWS Credentials
+      #   uses: aws-actions/configure-aws-credentials@v4
+      #   with:
+      #     role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+      #     aws-region: us-east-1
+
+      # For Azure:
+      # - name: Azure Login
+      #   uses: azure/login@v1
+      #   with:
+      #     client-id: ${{ secrets.AZURE_CLIENT_ID }}
+      #     tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+      #     subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      # For GCP:
+      # - name: Authenticate to Google Cloud
+      #   uses: google-github-actions/auth@v2
+      #   with:
+      #     workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+      #     service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
+      - name: Terraform Format Check
+        id: fmt
+        run: terraform fmt -check -recursive
+        continue-on-error: true
 
       - name: Terraform Init
-        run: terraform init
+        id: init
+        run: |
+          terraform init \
+            -backend-config="key=terraform.tfstate" \
+            -upgrade
+        # Add backend config as needed, e.g.:
+        # -backend-config="bucket=${{ secrets.TF_STATE_BUCKET }}"
 
       - name: Terraform Validate
-        run: terraform validate
+        id: validate
+        run: terraform validate -no-color
 
       - name: Terraform Plan
-        run: terraform plan -no-color -input=false | tee terraform-plan-main.txt
+        id: plan
+        run: |
+          terraform plan \
+            -no-color \
+            -input=false \
+            -out=tfplan \
+            -detailed-exitcode || echo "plan_exitcode=$?" >> $GITHUB_OUTPUT
+        continue-on-error: true
 
-      - name: Upload Terraform Plan Artifact
+      - name: Check Plan Status
+        run: |
+          if [ "${{ steps.plan.outputs.plan_exitcode }}" == "1" ]; then
+            echo "Terraform plan failed"
+            exit 1
+          elif [ "${{ steps.plan.outputs.plan_exitcode }}" == "2" ]; then
+            echo "Terraform plan succeeded with changes"
+          else
+            echo "Terraform plan succeeded with no changes"
+          fi
+
+      - name: Generate Plan Summary
+        run: |
+          terraform show -no-color tfplan > terraform-plan-main.txt
+          echo "### Terraform Plan Summary" >> $GITHUB_STEP_SUMMARY
+          echo '```terraform' >> $GITHUB_STEP_SUMMARY
+          terraform show -no-color tfplan | head -100 >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload Terraform Plan
         uses: actions/upload-artifact@v4
         with:
-          name: terraform-plan-main
-          path: terraform-plan-main.txt
+          name: terraform-plan-main-${{ github.sha }}
+          path: |
+            terraform-plan-main.txt
+            tfplan
+          retention-days: 30
 
+      # Optional: Add a manual approval step for production
+      # This requires configuring an environment with required reviewers in repo settings
+      
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        id: apply
+        if: steps.plan.outputs.plan_exitcode == '2'
+        run: |
+          terraform apply \
+            -auto-approve \
+            -input=false \
+            tfplan
+
+      - name: Terraform Output
+        if: steps.apply.outcome == 'success'
+        run: terraform output -no-color
+
+      # Optional: Post deployment notification
+      - name: Deployment Summary
+        if: always()
+        run: |
+          echo "### Deployment Results" >> $GITHUB_STEP_SUMMARY
+          echo "- **Format Check**: ${{ steps.fmt.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Init**: ${{ steps.init.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Validate**: ${{ steps.validate.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Plan**: ${{ steps.plan.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Apply**: ${{ steps.apply.outcome }}" >> $GITHUB_STEP_SUMMARY
+
+      # Optional: Notify on failure
+      - name: Notify on Failure
+        if: failure()
+        run: |
+          echo "::error::Terraform deployment failed. Check the logs for details."
+          # Add notification integration here (Slack, email, etc.)
