@@ -23,7 +23,6 @@
 
 <!-- Social -->
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/charles-bucher-cloud)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-181717?style=flat-square&logo=github&logoColor=white)](https://charles-bucher.github.io)
 [![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:quietopscb@gmail.com)
 
 ---
@@ -438,7 +437,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - 📧 Email: quietopscb@gmail.com
 - 💼 LinkedIn: [charles-bucher-cloud](https://linkedin.com/in/charles-bucher-cloud)
 - 🐙 GitHub: [@charles-bucher](https://github.com/charles-bucher)
-- 🌐 Portfolio: [charles-bucher.github.io](https://charles-bucher.github.io)
 
 ---
 
