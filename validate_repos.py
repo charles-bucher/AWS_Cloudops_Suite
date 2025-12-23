@@ -1,115 +1,154 @@
-import os
 import subprocess
-import sys
-
-REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
+from pathlib import Path
 
 
-def run(cmd, cwd=REPO_ROOT, check=True):
-    print(f"[RUN] {' '.join(cmd)}")
-    result = subprocess.run(cmd, cwd=cwd, shell=True, capture_output=True, text=True)
-    if result.stdout:
-        print(result.stdout)
-    if result.stderr:
-        print(result.stderr)
-    if check and result.returncode != 0:
-        print(f"[ERROR] Command failed: {' '.join(cmd)}")
-    return result
+# -----------------------------
+# Helper Functions
+# -----------------------------
+def calculate_percentage(total, passed):
+    return round((passed / total) * 100, 2) if total else 100.0
 
 
-def python_auto_fix():
-    print("[INFO] Removing unused imports with autoflake...")
-    run(
-        [
-            sys.executable,
-            "-m",
-            "autoflake",
-            "--remove-all-unused-imports",
-            "--in-place",
-            "--recursive",
-            ".",
-        ]
+def run_command(command):
+    """Run a shell command and return (returncode, stdout, stderr)"""
+    result = subprocess.run(command, capture_output=True, text=True, shell=True)
+    return result.returncode, result.stdout, result.stderr
+
+
+def normalize_filename(filename):
+    return filename.lower().replace(" ", "_")
+
+
+def find_placeholders(file_path, placeholders=None):
+    placeholders = placeholders or [
+        "TODO",
+        "does this need backend",
+        "FIXME",
+        "PLACEHOLDER",
+    ]
+    content = file_path.read_text(errors="ignore")
+    hits = []
+    for p in placeholders:
+        if p.lower() in content.lower():
+            hits.append(p)
+    return hits
+
+
+# -----------------------------
+# Python Auto-Fix & Lint
+# -----------------------------
+print("[INFO] Removing unused imports with autoflake...")
+run_command("python -m autoflake --remove-all-unused-imports --in-place --recursive .")
+
+print("[INFO] Formatting Python files with Black...")
+run_command("python -m black .")
+
+print("[INFO] Linting Python files with Flake8...")
+py_files = list(Path(".").rglob("*.py"))
+py_clean = 0
+py_placeholders = {}
+for f in py_files:
+    # Placeholder scan
+    ph_hits = find_placeholders(f)
+    if ph_hits:
+        py_placeholders[f] = ph_hits
+
+    ret, out, err = run_command(f"python -m flake8 {f} --max-line-length=120")
+    if not out.strip():
+        py_clean += 1
+py_percent = calculate_percentage(len(py_files), py_clean)
+
+# -----------------------------
+# Terraform Validation
+# -----------------------------
+print("[INFO] Validating Terraform files...")
+tf_files = list(Path(".").rglob("*.tf"))
+tf_valid = 0
+tf_placeholders = {}
+for f in tf_files:
+    # Placeholder scan
+    ph_hits = find_placeholders(f)
+    if ph_hits:
+        tf_placeholders[f] = ph_hits
+        print(f"[WARNING] Placeholder found in {f}, skipping validate.")
+        continue
+    ret, out, err = run_command(f"terraform validate {f.parent}")
+    if ret == 0:
+        tf_valid += 1
+tf_percent = calculate_percentage(len(tf_files), tf_valid)
+
+# -----------------------------
+# PowerShell Validation
+# -----------------------------
+print("[INFO] Auto-fixing PowerShell scripts...")
+ps_files = list(Path("./scripts").rglob("*.ps1"))
+ps_clean = 0
+ps_placeholders = {}
+for f in ps_files:
+    run_command(f"powershell.exe -Command Invoke-ScriptAnalyzer -Path '{f}' -Fix")
+    # Placeholder scan
+    ph_hits = find_placeholders(f)
+    if ph_hits:
+        ps_placeholders[f] = ph_hits
+    ret, out, err = run_command(
+        f"powershell.exe -Command Invoke-ScriptAnalyzer -Path '{f}'"
     )
+    if "Warning" not in out:
+        ps_clean += 1
+ps_percent = calculate_percentage(len(ps_files), ps_clean)
 
-    print("[INFO] Formatting Python files with Black...")
-    run([sys.executable, "-m", "black", "."])
+# -----------------------------
+# Screenshot Normalization
+# -----------------------------
+print("[INFO] Normalizing screenshot file names...")
+screenshots = list(Path("./screenshots").rglob("*"))
+img_files = [f for f in screenshots if f.suffix.lower() in (".png", ".jpg", ".jpeg")]
+normalized_count = 0
+for f in img_files:
+    new_name = normalize_filename(f.name)
+    new_path = f.parent / new_name
+    if f.name != new_name:
+        f.rename(new_path)
+    normalized_count += 1
+img_percent = calculate_percentage(len(img_files), normalized_count)
 
-    print("[INFO] Linting Python files with Flake8...")
-    run([sys.executable, "-m", "flake8", ".", "--max-line-length=120"])
+# -----------------------------
+# Git: Stage, Commit, Push
+# -----------------------------
+print("[INFO] Staging all changes...")
+run_command("git add .")
 
+print("[INFO] Committing changes...")
+commit_msg = "Auto-fix: Python, Terraform, PowerShell, screenshots"
+ret, out, err = run_command(f'git commit -m "{commit_msg}"')
+if ret != 0:
+    print(f"[WARNING] Git commit failed (maybe nothing to commit): {err}")
 
-def terraform_validate():
-    backend_file = os.path.join(REPO_ROOT, "Backend.tf")
-    if os.path.exists(backend_file):
-        with open(backend_file, "r") as f:
-            content = f.read()
-            if "does this need backend" in content:
-                print(
-                    "[WARNING] Placeholder text found in Backend.tf, skipping init/validate."
-                )
-                return
-    print("[INFO] Initializing Terraform...")
-    run(["terraform", "init", "-input=false"], check=False)
-    print("[INFO] Validating Terraform...")
-    run(["terraform", "validate"], check=False)
+print("[INFO] Pushing to origin main...")
+run_command("git push")
 
+# -----------------------------
+# Final Report
+# -----------------------------
+print("\n[DONE] Repo Auto-Fix & Validation Report:")
+print(f"Python: {py_percent}% clean ({py_clean}/{len(py_files)})")
+print(f"Terraform: {tf_percent}% valid ({tf_valid}/{len(tf_files)})")
+print(f"PowerShell: {ps_percent}% warning-free ({ps_clean}/{len(ps_files)})")
+print(f"Screenshots: {img_percent}% normalized ({normalized_count}/{len(img_files)})")
 
-def powershell_fix():
-    scripts_dir = os.path.join(REPO_ROOT, "scripts")
-    if os.path.exists(scripts_dir):
-        for file in os.listdir(scripts_dir):
-            if file.endswith(".ps1"):
-                full_path = os.path.join(scripts_dir, file)
-                print(f"[INFO] Auto-fixing PowerShell script: {file}")
-                # Use PowerShell instead of pwsh for Windows compatibility
-                run(
-                    [
-                        "powershell.exe",
-                        "-Command",
-                        f"Invoke-ScriptAnalyzer -Path '{full_path}' -Fix",
-                    ],
-                    check=False,
-                )
-
-
-def normalize_screenshots():
-    screenshots_dir = os.path.join(REPO_ROOT, "screenshots")
-    if os.path.exists(screenshots_dir):
-        print("[INFO] Normalizing screenshot file names...")
-        for file in os.listdir(screenshots_dir):
-            old_path = os.path.join(screenshots_dir, file)
-            new_name = file.lower().replace(" ", "_")
-            new_path = os.path.join(screenshots_dir, new_name)
-            if old_path != new_path:
-                os.rename(old_path, new_path)
-
-
-def git_commit_push():
-    print("[INFO] Staging all changes...")
-    run(["git", "add", "."])
-    # Only commit if there are changes
-    result = run(["git", "diff", "--cached", "--quiet"], check=False)
-    if result.returncode != 0:
-        print("[INFO] Committing changes...")
-        run(
-            [
-                "git",
-                "commit",
-                "-m",
-                "Auto-fix: Python, Terraform, PowerShell, screenshots",
-            ]
-        )
-        print("[INFO] Pushing to origin main...")
-        run(["git", "push"])
+# -----------------------------
+# Placeholders Report
+# -----------------------------
+all_placeholders = {
+    "Python": py_placeholders,
+    "Terraform": tf_placeholders,
+    "PowerShell": ps_placeholders,
+}
+print("\n[INFO] Placeholder Scan Report:")
+for category, files in all_placeholders.items():
+    if files:
+        print(f"\n{category} files needing attention:")
+        for f, ph in files.items():
+            print(f" - {f}: {', '.join(ph)}")
     else:
-        print("[INFO] No changes to commit.")
-
-
-if __name__ == "__main__":
-    print("[START] Repo Auto-Fix & Validator running...")
-    python_auto_fix()
-    terraform_validate()
-    powershell_fix()
-    normalize_screenshots()
-    git_commit_push()
-    print("[DONE] Repo auto-fix completed successfully!")
+        print(f"\n{category}: No placeholders found ✅")
